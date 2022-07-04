@@ -31,6 +31,6 @@ public class MoodAnalyzerTest {
         // create object of MoodAnalyzer
         MoodAnalyzer moodanalyzer = new MoodAnalyzer(null);
         String actualOutput = moodanalyzer.analyzeMood(null);
-        Assert.assertEquals("Exception Handled", actualOutput );
+        Assert.assertEquals("Happy", actualOutput );
     }
 }
