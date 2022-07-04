@@ -4,17 +4,14 @@ import org.junit.Assert;
 import org.junit.Test;
 
 public class MoodAnalyzerTest {
+
+    // Test case to check sad mood
     @Test
     public void givenMessageWhenSadShouldReturnSad() {
+        // create object of MoodAnalyzer class
         MoodAnalyzer moodanalyzer = new MoodAnalyzer();
-        String actualOutput = moodanalyzer.analyzeMood("I am in Sad Mood");
+        String message = "I am in Sad Mood";
+        String actualOutput = moodanalyzer.analyzeMood(message);
         Assert.assertEquals("SAD", actualOutput);
-    }
-
-    @Test
-    public void givenMessageContainAnyMoodShouldReturnHAppy(){
-        MoodAnalyzer moodanalyzer = new MoodAnalyzer();
-        String actualOutput = moodanalyzer.analyzeMood("I am in Any Mood");
-        Assert.assertEquals("HAPPY", actualOutput);
     }
 }
