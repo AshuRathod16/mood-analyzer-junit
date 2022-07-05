@@ -1,25 +1,27 @@
 package com.bridgelabz;
 
 public class MoodAnalyzer {
-    String message;
+    public static String message;
 
-    // Default constructor
     public MoodAnalyzer() {
     }
 
-    // parametrised constructor
-    public MoodAnalyzer(String message) {
+    public MoodAnalyzer(String message) throws MoodAnalysisException {
         this.message = message;
+        analyseMood();
     }
-    public static String analyzeMood(String message) {
+
+    public static String analyseMood() throws MoodAnalysisException {
         try {
             if (message.toLowerCase().contains("sad")) {
-                return "SAD";
+                return "Sad";
             } else {
-                return "HAPPY";
+                return "Happy";
             }
-        }catch (NullPointerException e){
-            return "Happy";
+        } catch (NullPointerException e) {
+            throw new MoodAnalysisException("Entered Invalid mood");
         }
+
     }
+
 }
